@@ -1,25 +1,17 @@
 <div align="center">
 
-# Open in External App
+# Open with Custom App
 
 Open file with external application in VSCode.
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/YuTengjing.open-in-external-app)](https://marketplace.visualstudio.com/items/YuTengjing.open-in-external-app/changelog) [![Installs](https://img.shields.io/visual-studio-marketplace/i/YuTengjing.open-in-external-app)](https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app) [![Downloads](https://img.shields.io/visual-studio-marketplace/d/YuTengjing.open-in-external-app)](https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app) [![Rating Star](https://img.shields.io/visual-studio-marketplace/stars/YuTengjing.open-in-external-app)](https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app&ssr=false#review-details) [![Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/YuTengjing.open-in-external-app)](https://github.com/tjx666/open-in-external-app)
-
 </div>
 
-## 💡 Motivation
+Original Extensions: [Open in External App](https://github.com/tjx666/open-in-external-app)
 
-VSCode is a very excellent editor, but sometime I prefer to use external application to work with some files. For example, I like to use [typora](https://www.typora.io/) to edit the markdown files. Usually, I will right click to the file, and select `Reveal in File Explorer` , then open the file using external application.
+Thank @YuTengjing for his/her creation.
 
-But, with this extension, you can do it more simply. Just right click to the file, and select `Open in External App`, that file would be opened by system default application. You can also use this way to open `.psd` files with photoshop, `.html` files with browser, and so on...
-
-## 🔌 Installation
-
-1. Execute `Extensions: Install Extensions` command from [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
-2. Type `YuTengjing.open-in-external-app` into the search form and install.
-
-Read the [extension installation guide](https://code.visualstudio.com/docs/editor/extension-gallery) for more details.
+### Changes
+I'm a Mobile engineer so i want to facilitate openning Android and iOS workspace with ease.
 
 ## 🔧 Configuration
 
@@ -29,6 +21,7 @@ Example configuration:
 
 ```jsonc
 {
+  "openInExternalApp.androidStudioPath": "", // Your Android Studio path
   "openInExternalApp.openMapper": [
     {
       // represent file extension name
@@ -192,21 +185,3 @@ Yes. you can use the variables placeholder documented at [predefined-variables](
   ]
 }
 ```
-
-## My extensions
-
-- [Open in External App](https://github.com/tjx666/open-in-external-app)
-- [Package Manager Enhancer](https://github.com/tjx666/package-manager-enhancer)
-- [Neo File Utils](https://github.com/tjx666/vscode-neo-file-utils)
-- [Reload Can Solve Any Problems](https://github.com/tjx666/reload-can-solve-any-problems)
-- [VSCode FE Helper](https://github.com/tjx666/vscode-fe-helper)
-- [VSCode archive](https://github.com/tjx666/vscode-archive)
-- [Better Colorizer](https://github.com/tjx666/better-colorizer/tree/main)
-- [Modify File Warning](https://github.com/tjx666/modify-file-warning)
-- [Power Edit](https://github.com/tjx666/power-edit)
-
-Check all here: [publishers/YuTengjing](https://marketplace.visualstudio.com/publishers/YuTengjing)
-
-## 🧡 Backers
-
-Thanks to `JiangShiqi` for designing the extension's logo.

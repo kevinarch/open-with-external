@@ -115,15 +115,37 @@ export default async function openInExternalApp(
     // except for configured appConfig.isElectronApp option
     let matchedConfigItem: ExtensionConfigItem | undefined;
     const configuration = getExtensionConfig();
-    if (configItemId === undefined) {
-        const ext = extname(filePath);
-        const extensionName = ext === '' || ext === '.' ? null : ext.slice(1);
-        logger.info(`parsed extension name: ${extensionName}`);
-        if (extensionName) {
-            matchedConfigItem = getConfigItemByExtName(configuration, extensionName);
+    switch (configItemId) {
+        case undefined: {
+            const ext = extname(filePath);
+            const extensionName = ext === '' || ext === '.' ? null : ext.slice(1);
+            logger.info(`parsed extension name: ${extensionName}`);
+            if (extensionName) {
+                matchedConfigItem = getConfigItemByExtName(configuration, extensionName);
+            }
+
+            break;
         }
-    } else {
-        matchedConfigItem = getConfigItemById(configuration, configItemId);
+        case 'android-studio': {
+            const config = vscode.workspace.getConfiguration('openInExternalApp');
+            const androidStudioPath = config.get<string>('androidStudioPath') as string;
+
+            matchedConfigItem = {
+                id: 'android-studio',
+                extensionName: '*',
+                apps: androidStudioPath,
+            };
+
+            break;
+        }
+        case 'xcode': {
+            // using builtin "open"
+
+            break;
+        }
+        default: {
+            matchedConfigItem = getConfigItemById(configuration, configItemId);
+        }
     }
 
     if (matchedConfigItem) {
