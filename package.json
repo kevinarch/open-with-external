@@ -1,7 +1,7 @@
 {
     "name": "open-with-custom-app",
     "displayName": "Open with Custom App",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Open file/folders with external application in VSCode",
     "publisher": "KevinMagus",
     "author": {
@@ -126,7 +126,7 @@
             ],
             "editor/title/context": [
                 {
-                    "when": "isFileSystemResource",
+                    "when": "isFileSystemResource && config.openInExternalApp.showInEditorTitleContext",
                     "command": "openInExternalApp.open",
                     "alt": "openInExternalApp.openMultiple",
                     "group": "navigation@10"
@@ -146,6 +146,11 @@
                     "type": "string",
                     "description": "Specifies the path to Android Studio executable",
                     "default": ""
+                },
+                "openInExternalApp.showInEditorTitleContext": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show 'Open with External App' in editor title context menu"
                 },
                 "openInExternalApp.openMapper": {
                     "type": "array",
